@@ -9,5 +9,5 @@ class profile::r10k {
   class {'r10k::webhook:
     user  => 'root',
     group => 'root',
-    {
+  }
 }
