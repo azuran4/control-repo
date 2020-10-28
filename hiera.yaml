@@ -6,6 +6,7 @@ hierarchy:
     name: "Encrypted data"
     lookup_key: eyaml_lookup_key
     paths: 
+      - "%{trusted.certname}"
       - "nodes/%{trusted.certname}.yaml"
       - "os/%{facts.os.family}.yaml"
       - common.yaml
