@@ -82,7 +82,7 @@ class mediawiki {
    
    class { '::apache':
     docroot => '/var/www/html'
-    mpm_module => 'prefork',
+#    mpm_module => 'prefork',
     subscribe => Package[$phpmysql],
    }
     
