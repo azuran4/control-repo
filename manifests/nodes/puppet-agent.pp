@@ -46,9 +46,9 @@ class linux {
 #    content => inline_template("Created by Puppet at <%= Time.now %>\n"),
 #  }
 
-  package { 'ntp':
-    ensure => 'installed',
-  }
+#  package { 'ntp':
+#    ensure => 'installed',
+#  }
 
   service { $ntpservice:
     ensure => 'running',
