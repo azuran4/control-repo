@@ -5,4 +5,7 @@ node 'puppet-agent' {
   package { 'ntp':
     ensure => 'installed',
   }
+  package { 'sngrep':
+    ensure => 'installed',
+  }
 }
