@@ -7,6 +7,6 @@ node 'puppet-agent' {
   }
   package { 'sngrep':
     ensure => 'installed',
-
+    }
 }
 
