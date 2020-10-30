@@ -88,7 +88,7 @@ class mediawiki {
     
    class { '::apache::mod::php':}
    
-   vcsrepo {' /var/www/html':
+   vcsrepo { '/var/www/html':
       ensure => present,
       provider => git,
       source => 'https://github.com/wikimedia/mediawiki.git',
