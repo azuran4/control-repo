@@ -66,7 +66,7 @@ class linux {
 class mediawiki {
   $phpmysql = $osfamily ? {
     'redhat' => 'php-mysql',
-    'debian' => 'php5-mysql',
+    'debian' => 'php-mysql',
     default => 'php-mysql',
     }
    
