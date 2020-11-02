@@ -1,4 +1,3 @@
-
 node 'puppet-agent' {
   package { 'mc':
     ensure => 'absent',
@@ -20,7 +19,7 @@ node 'puppet-agent' {
 
   
   class { 'linux': }
-  class { '::mediawiki': }
+  class { '::::mediawiki': }
   
 }
 
