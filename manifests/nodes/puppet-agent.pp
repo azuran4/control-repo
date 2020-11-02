@@ -124,7 +124,7 @@ class mediawiki {
    file { 'LocalSettings.php':
        path    => '/var/www/html/LocalSettings.php',
        ensure  => 'file',
-       content => template('mediawiki/LocalSettings.erb'),
+       content => template('::mediawiki/LocalSettings.erb'),
    }
 
 }
