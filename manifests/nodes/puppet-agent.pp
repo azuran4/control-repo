@@ -73,58 +73,58 @@ class linux {
 
 }
 
-#class mediawiki {
-#  $phpmysql = $osfamily ? {
-#    'redhat' => 'php-mysql',
-#    'debian' => 'php-mysql',
-#    default => 'php-mysql',
-#    }
-#   
-#   package { $phpmysql:
-#    ensure => 'present';
-#   }
-#   
-#   if $osfamily == 'redhat' {
-#    package { 'php-xml':
-#      ensure => 'present',
-#    }
-#   }
-#   
-#   class { '::apache':
-#    docroot => '/var/www/html',
-#    mpm_module => 'prefork',
-#    subscribe => Package[$phpmysql],
-#   }
-#    
-#   class { '::apache::mod::php':}
-#   
-#   vcsrepo { '/var/www/html':
-#      ensure => present,
-#      provider => git,
-#      source => 'https://github.com/wikimedia/mediawiki.git',
-#      revision => 'REL1_23',
-#   }
-#   file { '/var/www/html/index.html':
-#      ensure => 'absent',
-#   }
-#  
-#   File['/var/www/html/index.html'] -> Vcsrepo['/var/www/html']
-#   
-#   class { '::mysql::server':
-#      root_password => 'training',
-#   }
-#   
-#   class { '::firewall': }
-#   
-#   firewall {'000 allow https access':
-#       port => '80',
-#       proto => 'tcp',
-#       action => 'accept',  
-#   }
-#   file { 'LocalSettings.php':
-#       path    => '/var/www/html/LocalSettings.php',
-#       ensure  => 'file',
-#       content => template('mediawiki/LocalSettings.epp'),
-#   }
+class mediawiki {
+  $phpmysql = $osfamily ? {
+    'redhat' => 'php-mysql',
+    'debian' => 'php-mysql',
+    default => 'php-mysql',
+    }
+   
+   package { $phpmysql:
+    ensure => 'present';
+   }
+   
+   if $osfamily == 'redhat' {
+    package { 'php-xml':
+      ensure => 'present',
+    }
+   }
+   
+   class { '::apache':
+    docroot => '/var/www/html',
+    mpm_module => 'prefork',
+    subscribe => Package[$phpmysql],
+   }
+    
+   class { '::apache::mod::php':}
+   
+   vcsrepo { '/var/www/html':
+      ensure => present,
+      provider => git,
+      source => 'https://github.com/wikimedia/mediawiki.git',
+      revision => 'REL1_23',
+   }
+   file { '/var/www/html/index.html':
+      ensure => 'absent',
+   }
+  
+   File['/var/www/html/index.html'] -> Vcsrepo['/var/www/html']
+   
+   class { '::mysql::server':
+      root_password => 'training',
+   }
+   
+   class { '::firewall': }
+   
+   firewall {'000 allow https access':
+       port => '80',
+       proto => 'tcp',
+       action => 'accept',  
+   }
+   file { 'LocalSettings.php':
+       path    => '/var/www/html/LocalSettings.php',
+       ensure  => 'file',
+       content => template('mediawiki/LocalSettings.epp'),
+   }
 
-#}
+}
