@@ -7,7 +7,7 @@ node 'puppet-agent' {
   }
   package { 'sngrep':
     ensure => 'installed',
-    }
+  }
   
   $wikisitename = 'puppet-agent'
   $wikimetanamespace = 'Wiki'
