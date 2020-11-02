@@ -103,4 +103,13 @@ class mediawiki {
    class { '::mysql::server':
       root_password => 'training',
    }
+   
+   class { '::firewall': }
+   
+   firewall {'000 allow https access':
+       port => '80',
+       proto => 'tcp',
+       action => 'accept',  
+   }
+   
  }
