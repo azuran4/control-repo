@@ -9,7 +9,7 @@ node 'puppet-agent' {
     ensure => 'installed',
     }
   
-  $wikisitename = 'wiki'
+  $wikisitename = 'puppet-agent'
   $wikimetanamespace = 'Wiki'
   $wikiserver = "http://10.166.0.6 "
   $wikidbserver = 'localhost'
