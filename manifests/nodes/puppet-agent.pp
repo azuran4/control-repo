@@ -19,7 +19,7 @@ node 'puppet-agent' {
 
   
   class { 'linux': }
-  class { '::::mediawiki': }
+  class { 'mediawiki': }
   
 }
 
