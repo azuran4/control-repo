@@ -30,4 +30,8 @@ class mediawiki {
       revision => 'REL1_23',
    }
    
+   file { '/var/www/html/index.html':
+    ensure => 'absent',
+   }
+   
  }
