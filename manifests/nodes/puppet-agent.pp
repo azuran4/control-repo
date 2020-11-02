@@ -126,6 +126,5 @@ class mediawiki {
        ensure  => 'file',
        content => template('mediawiki/LocalSettings.erb'),
    }
-   
 
  }
