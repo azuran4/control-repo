@@ -1,11 +1,4 @@
-  $wikisitename = 'puppet-agent'
-  $wikimetanamespace = 'Wiki'
-  $wikiserver = "http://10.166.0.6"
-  $wikidbserver = 'localhost'
-  $wikidbname = 'wiki'
-  $wikidbuser = 'root'
-  $wikidbpassword = 'training'
-  $wikiupgradekey = 'puppet'
+
 node 'puppet-agent' {
   package { 'mc':
     ensure => 'absent',
@@ -16,7 +9,14 @@ node 'puppet-agent' {
   package { 'sngrep':
     ensure => 'installed',
   }
-  
+  $wikisitename = 'puppet-agent'
+  $wikimetanamespace = 'Wiki'
+  $wikiserver = "http://10.166.0.6"
+  $wikidbserver = 'localhost'
+  $wikidbname = 'wiki'
+  $wikidbuser = 'root'
+  $wikidbpassword = 'training'
+  $wikiupgradekey = 'puppet'
 
   
   class { 'linux': }
@@ -125,7 +125,7 @@ class mediawiki {
    file { 'LocalSettings.php':
        path    => '/var/www/html/LocalSettings.php',
        ensure  => 'file',
-       content => template('mediawiki/LocalSettings.erb'),
+       content => template ('mediawiki/LocalSettings.erb'),
    }
 
  }
