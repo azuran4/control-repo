@@ -23,12 +23,12 @@ class mediawiki {
     
    class { '::apache::mod::php':}
    
-#   vcsrepo {' /var/www/html':
-#      ensure => present,
-#      provider => git,
-#      source => 'https://github.com/wikimedia/mediawiki.git',
-#      revision => 'REL1_23',
-#   }
+   vcsrepo {' /var/www/html':
+      ensure => present,
+      provider => git,
+      source => 'https://github.com/wikimedia/mediawiki.git',
+      revision => 'REL1_23',
+   }
    
 #   file { '/var/www/html/index.html':
 #    ensure => 'absent',
