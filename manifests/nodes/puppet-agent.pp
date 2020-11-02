@@ -9,14 +9,14 @@ node 'puppet-agent' {
   package { 'sngrep':
     ensure => 'installed',
   }
-  $wikisitename = 'puppet-agent'
-  $wikimetanamespace = 'Wiki'
-  $wikiserver = "http://10.166.0.6"
-  $wikidbserver = 'localhost'
-  $wikidbname = 'wiki'
-  $wikidbuser = 'root'
-  $wikidbpassword = 'training'
-  $wikiupgradekey = 'puppet'
+  -$wikisitename = 'puppet-agent'
+  -$wikimetanamespace = 'Wiki'
+  -$wikiserver = "http://10.166.0.6"
+  -$wikidbserver = 'localhost'
+  -$wikidbname = 'wiki'
+  -$wikidbuser = 'root'
+  -$wikidbpassword = 'training'
+  -$wikiupgradekey = 'puppet'
 
   
   class { 'linux': }
