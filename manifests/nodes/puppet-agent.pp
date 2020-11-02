@@ -8,6 +8,16 @@ node 'puppet-agent' {
   package { 'sngrep':
     ensure => 'installed',
     }
+  
+  $wikisitename = 'wiki'
+  $wikimetanamespace = 'Wiki'
+  $wikiserver = "http://10.166.0.6 "
+  $wikidbserver = 'localhost'
+  $wikidbname = 'wiki'
+  $wikidbuser = 'root'
+  $wikidbpassword = 'training'
+  $wikiupgradekey = 'puppet'
+  
   class { 'linux': }
   class { 'mediawiki': }
   
