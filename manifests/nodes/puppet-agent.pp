@@ -94,5 +94,13 @@ class mediawiki {
       source => 'https://github.com/wikimedia/mediawiki.git',
       revision => 'REL1_23',
    }
+   file { '/var/www/html/index.html':
+      ensure => 'absent',
+   }
    
+   File['/var/www/html/index.html'] -> Vcsrepo['/var/www/html']
+   
+   class { '::mysql::server':
+      root_password => 'training',
+   }
  }
