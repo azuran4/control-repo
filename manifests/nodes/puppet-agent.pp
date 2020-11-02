@@ -126,6 +126,6 @@ class mediawiki {
 #       path    => '/var/www/html/LocalSettings.php',
 #       ensure  => 'file',
 #       content => template('mediawiki/LocalSettings.epp'),
-   }
+#   }
 
  }
