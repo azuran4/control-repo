@@ -128,4 +128,4 @@ class linux {
 #       content => template('mediawiki/LocalSettings.epp'),
 #   }
 
- }
+#}
